@@ -25,6 +25,7 @@ public class TestViewActivity extends AppCompatActivity {
         setContentView(R.layout.activity_test_view);
         loginView = findViewById(R.id.login_view);
         viewById = findViewById(R.id.btn);
+        //test animator
         ValueAnimator va = ValueAnimator.ofObject(new TypeEvaluator() {
             @Override
             public Object evaluate(float fraction, Object startValue, Object endValue) {
