@@ -24,8 +24,8 @@ public class TestViewActivity extends AppCompatActivity {
         setContentView(R.layout.activity_test_view);
         loginView = findViewById(R.id.login_view);
         viewById = findViewById(R.id.btn);
-        ValueAnimator;
-        ObjectAnimator;
+        //ValueAnimator;
+        //ObjectAnimator;
         viewById.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
