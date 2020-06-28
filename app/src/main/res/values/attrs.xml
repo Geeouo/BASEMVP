@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="LoginView" >
+        <attr name="desireWidth" format="dimension"/>
+        <attr name="desireHeight" format="dimension"/>
+    </declare-styleable>
+</resources>
