@@ -1,6 +1,7 @@
 package com.houserentmanage.logic.login;
 
 import android.animation.ObjectAnimator;
+import android.animation.TypeEvaluator;
 import android.animation.ValueAnimator;
 import android.os.Bundle;
 import android.view.View;
@@ -15,7 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
  * Create by Gee on 2020/6/21.
  */
 public class TestViewActivity extends AppCompatActivity {
-    LoginView loginView ;
+    LoginView loginView;
     private View viewById;
 
     @Override
@@ -24,19 +25,26 @@ public class TestViewActivity extends AppCompatActivity {
         setContentView(R.layout.activity_test_view);
         loginView = findViewById(R.id.login_view);
         viewById = findViewById(R.id.btn);
-        ValueAnimator;
-        ObjectAnimator;
+        ValueAnimator va = ValueAnimator.ofObject(new TypeEvaluator() {
+            @Override
+            public Object evaluate(float fraction, Object startValue, Object endValue) {
+                return null;
+            }
+        }, viewById, viewById);
+        ObjectAnimator oa = ObjectAnimator.ofFloat(viewById, "translationX", 0, 100);
+        oa.setDuration(1000);
+        oa.start();
         viewById.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                loginView.startScroll(-1000,-1000,10000);
+                loginView.startScroll(-1000, -1000, 10000);
             }
         });
 
         loginView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(TestViewActivity.this,"clickMoveView",Toast.LENGTH_SHORT).show();
+                Toast.makeText(TestViewActivity.this, "clickMoveView", Toast.LENGTH_SHORT).show();
             }
         });
     }
